@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<title>React</title>
-<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<style>
-</style>
+    <meta charset="utf-8" />
+    <title>Hello React!</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 </head>
-<h1>React</h1>
-<div id="root">wait...</div>
-<script src="./script.js"></script>
 <body>
+    <div id="root"></div>
+    <script type="text/babel">
+    let title = "新タイトル"
+    let message = "新メッセージ"
+    let el = ( 
+            <div>
+                <h2>{title}</h2>
+                <p>{message}</p>
+            </div>)
+    ReactDOM.render(
+     el
+    ,document.getElementById('root'));
+    </script>
 </body>
 </html>
