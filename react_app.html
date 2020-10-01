@@ -10,23 +10,31 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-    let title = "React"
-    let message = "新メッセージ"
-    let link = "http://google.com"
-    const msg_s = {
-        fontSize:"20pt",
+    let dom = document.querySelector('#root');
+
+    const msg = {
+        fontSize:"20px",
+        fontWeight:"bold",
         color:"red",
-        border:"1px solid blue"
+        border:"2px solid green"
+    }
+
+    let printMsg = function(msg,size,color) {
+        const style = {
+            fontSize:size + "pt",
+            fontWeight:'700',
+            color: color,
+            border:"1px solid" + color
+        };
+    return <p style={style}>{msg}</p>
     }
     let el = ( 
             <div>
-                <h2>{title}</h2>
-                <p style={msg_s}>{message}</p>
-                <p><a href={link}>this is link</a></p>
+                {printMsg('最初のメッセージ',30,'#ddd')}
+                {printMsg('次のメッセージです.',20,'#aaa')}
+                {printMsg('最後のメッセージでした.',14,'#333')}
             </div>)
-    ReactDOM.render(
-     el
-    ,document.getElementById('root'));
+    ReactDOM.render(el,dom);
     </script>
 </body>
 </html>
